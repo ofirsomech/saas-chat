@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CheckoutButton = (props: PropTypes) => {
-  return <div></div>;
+  return <div>CheckoutButton</div>;
 };
 
 interface PropTypes {}
