@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '../components/Header/Header';
 import { ThemeProvider } from '@/shared/providers/ThemeProvider/ThemeProvider';
 import ClientProviders from '@/components/ClientProviders/ClientProviders';
+import FirebaseAuthProvider from '@/components/FirebaseAuthProvider/FirebaseAuthProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,16 +20,18 @@ export default function RootLayout({
     <ClientProviders>
       <html lang="en">
         <body className="flex flex-col min-h-screen">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-          </ThemeProvider>
+          <FirebaseAuthProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Header />
+            </ThemeProvider>
 
-          {children}
+            {children}
+          </FirebaseAuthProvider>
         </body>
       </html>
     </ClientProviders>
